@@ -12,6 +12,8 @@ const Login = () => {
   const handleInputChange = (e) => {
       setFormData({...formData,[e.target.name]:e.target.value})
   }
+
+  
   return (
     <section className="px-5 lg:px-0">
       <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10">
@@ -42,7 +44,12 @@ const Login = () => {
           <div className="mt-7">
             <button type="submit" className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 ">Login</button>
           </div>
-          <p className="mt-5 text-textColor text-center">Don't have an account? <Link to='/register' className="text-primaryColor font-medium">Register</Link> </p>
+          <p className="mt-5 text-textColor text-center">
+          Don't have an account? 
+          <Link to='/register' className="text-primaryColor font-medium">
+          Register
+          </Link> 
+          </p>
         </form>
       </div>
     </section>
