@@ -28,9 +28,9 @@ export const getSingleUser = async(req,res)=>{
     const id = req.params.id;
 
     try {
-        const user = await User.findById(id).select("-password")
+        const users = await User.findById(id).select("-password")
 
-        res.status(200).json({message : "sucessfully found user",success : true,data : user})
+        res.status(200).json({message : "sucessfully found user",success : true, data : users})
     } catch (error) {
         res.status(404).json({message : "faield to find user",success : false})
     }
