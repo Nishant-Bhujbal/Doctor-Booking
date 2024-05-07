@@ -16,8 +16,9 @@ export const register = async(req,res)=>{
     try {
 
         let user = null
+
         if(role === 'patient'){
-            user =  awaitUser.findOne({email})
+            user =  await User.findOne({email})
         }
         else if(role === 'doctor'){
             user = await Doctor.findOne({email})
@@ -56,7 +57,7 @@ export const register = async(req,res)=>{
         res.status(200).json({message : "Succesful user creation",success : true})
         
     } catch (error) {
-        res.status(400).json({message : "internal server error",success : false})
+        res.status(500).json({message : "internal server error",success : false})
     }
 }
 
