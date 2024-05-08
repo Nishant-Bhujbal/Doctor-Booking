@@ -34,15 +34,20 @@ const DoctorAbout = ({name,about,qualifications,experiences}) => {
     <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">Experience</h3>
     <ul className="grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5">
         
-        {experiences?.map((index,item)=> 
-            <li key={index} className="p-4 rounded bg-[#fff9ea]">
-            <span className="text-yellowColor text-[15px] leading-6 font-semibold">
-            {FormatedDate(item.startingDate)} - {FormatedDate(item.endingDate)}
-            </span>
-            <p className="text-[16px] leading-6 font-medium text-textColor">{item.position}</p>
-            <p className="text-[16px] leading-6 font-medium text-textColor">{item.hospital}</p>
-        </li>
-        )}
+
+        {experiences?.map((item,index)=> 
+        <li key={index} className="p-4 rounded bg-[#fff9ea]">
+                <div>
+                    <span className="text-yellowColor text-[15px] leading-6 font-semibold">
+                        {FormatedDate(item.startingDate)} - {FormatedDate(item.endingDate)}
+                    </span>
+                    <p className="text-[16px] leading-6 font-medium text-textColor">{item.position}</p>
+                </div>
+                <p className="text-[14px] leading-5 font-medium text-textColor">{item.hospital}</p>
+            </li>
+            ) 
+            }
+ 
     </ul>
     </div>
 

@@ -9,7 +9,7 @@ const Profile = ({doctorData}) => {
     const [formData,setFormData] = useState({
         name: '',
         email : '',
-        password : '',
+        password : doctorData.password,
         phone : '',
         bio : '',
         gender: '',
