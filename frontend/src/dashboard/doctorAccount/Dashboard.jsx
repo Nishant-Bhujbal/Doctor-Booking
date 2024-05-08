@@ -38,23 +38,23 @@ const Dashboard = () => {
                       </figure>
                       <div>
                         <span className="bg-[#CCF0F3] text-irisBlueColor py-1 px-4 lg:py-2 lg:px-6 rounded-md text-[12px] leading-4 lg:text-[18px] lg:leading-6 font-semibold">
-                          Surgeon
+                          {data.specialization}
                         </span>
 
                         <h3 className="text-[22px] leading-9 font-bold text-headingColor mt-3">
-                          Nishant Bhujbal
+                          {data.name}
                         </h3>
 
                         <div className="flex items-center gap-[6px]">
                           <span className="flex items-center gap-[6px] text-headingColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold ">
                             <img src={starIcon} alt='' />
-                            4.5
+                            {data.averageRating}
                           </span>
                           <span className=" text-textColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold ">
-                           (225)
+                           ({data.totalRating})
                           </span>
                         </div>
-                        <p className="text__para font-[15px] lg:max-w-[390px] leading-6">doctor bio</p>
+                        <p className="text__para font-[15px] lg:max-w-[390px] leading-6">{data?.bio}</p>
                       </div>
                     </div>
                     <DoctorAbout 
@@ -67,7 +67,7 @@ const Dashboard = () => {
 
                   )}
                   {tab === "appointments" && <div>Appointments</div>}
-                  {tab === "settings" && <Profile />}
+                  {tab === "settings" && <Profile doctorData={data} />}
                 </div>
               </div>
             </div>)
